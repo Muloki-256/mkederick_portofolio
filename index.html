@@ -166,6 +166,23 @@ section{padding:80px 0}
 .nl a.on{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
 @media(max-width:900px){.skg{grid-template-columns:1fr 1fr}.rg{grid-template-columns:1fr;gap:36px}}
 @media(max-width:560px){.skg{grid-template-columns:1fr}.rd div{grid-template-columns:1fr;gap:4px}}
+
+nav{flex-wrap:nowrap;padding:12px 0;position:relative;gap:20px}
+.nl{display:flex;align-items:center;gap:30px}
+.nl a:not(.btn){padding:6px 0;border-bottom:2px solid transparent;text-decoration:none;font:600 15px 'Bricolage Grotesque',sans-serif}
+.nl a:not(.btn):hover,.nl a.on{border-bottom-color:var(--ink);text-decoration:none}
+.burger{display:none;width:46px;height:46px;border:1.5px solid var(--ink);background:var(--bg);color:var(--ink);cursor:pointer;padding:0;place-items:center}
+.burger .ico{width:24px;height:24px}
+.burger:hover,.burger[aria-expanded=true]{background:var(--ink);color:var(--bg)}
+@media(max-width:900px){
+.burger{display:grid}
+.nl{display:none;position:absolute;top:100%;left:-24px;right:-24px;background:var(--bg);border-top:1px solid var(--ink);border-bottom:2px solid var(--ink);flex-direction:column;align-items:stretch;gap:0;padding:0 24px 20px;order:0;width:auto;overflow:visible;white-space:normal}
+.nl.open{display:flex}
+.nl a:not(.btn){padding:15px 0;border-bottom:1px solid var(--line);font-size:17px}
+.nl a.on{border-bottom-color:var(--ink)}
+.nl .btn{margin-top:18px;text-align:center;padding:14px}
+}
+@media(max-width:480px){.brand small{display:none}.brand b{font-size:16px}}
 </style>
 </head>
 <body>
@@ -181,8 +198,9 @@ section{padding:80px 0}
 </defs></svg>
 <div class="util"><div class="wrap"><span>Class of 2026. Open to junior IT, data and agri-tech roles.</span><span class="uc"><a href="mailto:mkderick@outlook.com">mkderick@outlook.com</a><a href="tel:+256758626307">0758 626 307</a></span></div></div>
 <header class="top"><div class="wrap"><nav aria-label="Main"><a class="brand" href="#top" aria-label="Muloki Elizephen Derick, home"><img class="mono" src="derick.jpg" alt="Portrait of Muloki Elizephen Derick" width="44" height="44"><span><b>Muloki Elizephen Derick</b><small>Information Technology Graduate</small></span></a>
-<div class="nl"><a href="#featured">Featured project</a><a href="#projects">Projects</a><a href="#about">Background</a><a href="#skills">Skills</a><a href="#refs">References</a></div>
-<a class="btn main nb" href="#contact">Get in touch</a></nav></div></header>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg class="ico s" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<div class="nl" id="menu"><a href="#featured">Case study</a><a href="#projects">Projects</a><a href="#about">Background</a><a href="#skills">Skills</a><a href="#refs">References</a><a class="btn main nb" href="#contact">Get in touch</a></div>
+</nav></div></header>
 
 <div class="wrap hero" id="top">
 <div>
@@ -209,7 +227,7 @@ section{padding:80px 0}
 <div><span>Availability</span><b>Open to junior IT, data and agri-tech roles</b></div>
 </div></div>
 <div class="glance"><div class="wrap">
-<div><b>8</b><span>projects on GitHub, from mobile to GIS to data</span></div>
+<div><b>9</b><span>projects on GitHub, from mobile to GIS to data</span></div>
 <div><b>15</b><span>farmers took part in usability testing of my main app</span></div>
 <div><b>4.7/5</b><span>average for "I would use this application again"</span></div>
 <div><b>18+</b><span>months leading an IT club and mentoring first-years</span></div>
@@ -245,7 +263,7 @@ section{padding:80px 0}
 <section id="projects"><div class="wrap">
 <h2 class="s">More projects</h2>
 <div class="filters" role="group" aria-label="Filter projects">
-<button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="Agriculture">Agriculture</button><button aria-pressed="false" data-f="Health">Health</button><button aria-pressed="false" data-f="GIS">GIS</button><button aria-pressed="false" data-f="Data">Data and web</button>
+<button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="Agriculture">Agriculture</button><button aria-pressed="false" data-f="Health">Health</button><button aria-pressed="false" data-f="GIS">GIS</button><button aria-pressed="false" data-f="Database">Database</button><button aria-pressed="false" data-f="Data">Data and web</button>
 </div>
 <div class="grid" id="grid"></div>
 </div></section>
@@ -269,9 +287,9 @@ section{padding:80px 0}
 </div>
 </div></section>
 
-<section id="skills"><div class="wrap"><h2 class="s">Skills</h2><div class="skg"><div class="sk"><h3>Mobile development</h3><ul class="tags"><li>Flutter</li><li>Dart</li><li>SQLite</li><li>Android</li><li>Offline-first design</li></ul></div><div class="sk"><h3>Web and data</h3><ul class="tags"><li>Web app development</li><li>Python</li><li>Streamlit</li><li>Predictive modelling</li></ul></div><div class="sk"><h3>GIS and mapping</h3><ul class="tags"><li>Hotspot analysis</li><li>Web mapping</li><li>Spatial data</li></ul></div><div class="sk"><h3>Networking and hardware</h3><ul class="tags"><li>Cisco IT Essentials</li><li>PC hardware and software</li><li>Network documentation</li></ul></div><div class="sk"><h3>Research and UX</h3><ul class="tags"><li>Questionnaires and interviews</li><li>Focus groups</li><li>Usability testing</li><li>Requirements gathering</li></ul></div><div class="sk"><h3>Professional</h3><ul class="tags"><li>Accurate record-keeping</li><li>Clear written guides</li><li>Mentoring and coordination</li><li>Works under pressure</li><li>Flexible hours</li></ul></div></div><p style="margin-top:28px">Languages: English and Luganda (native).</p></div></section>
+<section id="skills"><div class="wrap"><h2 class="s">Skills</h2><div class="skg"><div class="sk"><h3>Mobile development</h3><ul class="tags"><li>Flutter</li><li>Dart</li><li>SQLite</li><li>Android</li><li>Offline-first design</li></ul></div><div class="sk"><h3>Web and data</h3><ul class="tags"><li>Web app development</li><li>Python</li><li>Streamlit</li><li>Predictive modelling</li></ul></div><div class="sk"><h3>Databases</h3><ul class="tags"><li>Oracle SQL and PL/SQL</li><li>MySQL</li><li>ERD design</li><li>Stored procedures and triggers</li></ul></div><div class="sk"><h3>Desktop development</h3><ul class="tags"><li>C#</li><li>Windows desktop apps</li><li>ADO.NET</li><li>Layered architecture</li></ul></div><div class="sk"><h3>GIS and mapping</h3><ul class="tags"><li>Hotspot analysis</li><li>Web mapping</li><li>Spatial data</li></ul></div><div class="sk"><h3>Networking and hardware</h3><ul class="tags"><li>Cisco IT Essentials</li><li>PC hardware and software</li><li>Network documentation</li></ul></div><div class="sk"><h3>Research and UX</h3><ul class="tags"><li>Questionnaires and interviews</li><li>Focus groups</li><li>Usability testing</li><li>Requirements gathering</li></ul></div><div class="sk"><h3>Professional</h3><ul class="tags"><li>Accurate record-keeping</li><li>Clear written guides</li><li>Mentoring and coordination</li><li>Works under pressure</li><li>Flexible hours</li></ul></div></div><p style="margin-top:28px">Languages: English and Luganda (native).</p></div></section>
 <section id="recruiters"><div class="wrap"><h2 class="s">For recruiters</h2><div class="rg">
-<dl class="rd"><div><dt>Roles I'm targeting</dt><dd>Junior software and mobile developer, data and GIS analyst, IT support, agri-tech and coffee supply chain technology</dd></div>
+<dl class="rd"><div><dt>Roles I'm targeting</dt><dd>Junior software, mobile and database developer, data and GIS analyst, IT support, agri-tech and coffee supply chain technology</dd></div>
 <div><dt>Availability</dt><dd>Immediately, after graduation</dd></div>
 <div><dt>Location</dt><dd>Kalangala and Masaka, Uganda. Open to relocation.</dd></div>
 <div><dt>Working style</dt><dd>Comfortable with field work alongside farmers and cooperatives, and with extended or seasonal hours</dd></div>
@@ -314,10 +332,11 @@ section{padding:80px 0}
 <script>
 const P=[
 ["Kalangala Palm Oil Harvests Info Monitor","Agriculture","View-only, offline-first Flutter app giving SOPGCO oil palm farmers their harvest, deduction and loan details.","kalangala_palm_oil_harvests_info_monitor"],
+["Supplier Management System","Database","Coursework project: an Oracle database for Masaka Agri-Supplies Ltd with 10 tables, payment procedures, triggers that block overpayments and keep an audit trail, and user roles.","Supplier-Management-System"],
 ["Masaka Road Accident Hotspot Mapping","GIS","GIS analysis of where road accidents cluster along the Masaka road.","Masaka_Road_Accident_Hotspot_Mapping_Using_GIS"],
 ["Masaka Road Accident Hotspot Map, Web App","GIS","Web app that puts the accident hotspot map in the browser.","Masaka_Road_Accident_Hotspot_Map_web_App"],
 ["Kampala Health Centers, Web App","Health","Web app for finding health centers in Kampala.","Kampala_Health_Centers-web_App"],
-["Clinic Management System","Health","System for managing clinic operations and records.","ClinicManagementSystem"],
+["Clinic Management System","Health","Windows desktop app in C# with MySQL for a small clinic: patients, doctors, appointments with clash checking, medical records, pharmacy orders with stock tracking, and payment verification with receipts.","ClinicManagementSystem"],
 ["Customer Churn Prediction","Data","Streamlit app that predicts which customers are likely to leave.","Customer_Churn_Prediction_Using_Streamlit"],
 ["Muddu Tech Construction","Data","Web presence project for a construction business.","muddu_tech_construction"],
 ["Host","Data","Hosting and deployment project. See the repository for details.","Host"]];
@@ -327,6 +346,9 @@ function draw(f){g.innerHTML=P.filter(p=>f==='all'||p[1]===f).map(p=>`<article c
 const secs=[...document.querySelectorAll('.nl a')].map(a=>[a,document.querySelector(a.getAttribute('href'))]).filter(x=>x[1]);
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){secs.forEach(([a,t])=>a.classList.toggle('on',t===e.target))}}),{rootMargin:'-45% 0px -50% 0px'});
 secs.forEach(([a,t])=>io.observe(t));
+const bg=document.getElementById('burger'),mn=document.getElementById('menu');
+bg.onclick=()=>{const o=mn.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Close menu':'Open menu')};
+mn.querySelectorAll('a').forEach(a=>a.onclick=()=>{mn.classList.remove('open');bg.setAttribute('aria-expanded',false)});
 draw('all');
 document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));draw(b.dataset.f)});
 </script>
